@@ -1,0 +1,1422 @@
+@charset "utf-8";
+/* CUSTOM STYLES OF THE DFPS PUBLIC WEBSITE */
+
+/* ********** LEGACY STYLES ********** */
+/* Don't use these, we're trying to get rid of them! */
+/* Element box used only in 2004 and 2005 databooks to style the dropdown navigation box */
+.elementbox {
+	float: right;
+	background-color: #EFF5F8;
+	border: 1px solid #9FBFD0;
+	font-size: 95%;
+	margin: 0 0 10px 10px;
+}
+.elementbox td {
+	white-space: nowrap;
+}
+.elementbox form {
+	margin-bottom: 0;
+}
+.elementbox form select {
+	margin-bottom: 4px;
+	margin-top: 4px;
+	padding-right: 2px;
+	padding-left: 2px;
+}
+/* Data table extensively throughout the annual reports and databooks, including post-redesign ones that were cloned from pre-redesign ones...
+   Also used in a handful of training modules designed in the style of the old website...
+   Otherwise, all other instances have been converted to Bootstrap tables...
+   The specialty sites also use a class called "datatable" but that's in their own style sheet... */
+.datatable {
+	margin-bottom: 15px;
+}
+.datatable, .datatable td, .datatable th {
+	border: 1px solid #9FBFD0; /* 02958D */
+	border-collapse: collapse;
+}
+.datatable td, .datatable th {
+	padding: 5px;
+	margin: 0px;
+}
+.datatable th {
+	background-color: #EBF1F7; /*D2F0EF #BEE9E7; #B1E4E2; */
+	font-weight: bold;
+}
+.tablelabel {
+	font-size: 14px;
+	margin-bottom: 0px;
+}
+.datatable caption {
+	font-weight: bold;
+	margin: 0 0 10px;
+}
+/* Page Menu for Databooks 2009-2015 */
+#pagemenu {
+	float: right;
+	margin-bottom: 0;
+	padding-top: 5px;
+}
+#pagemenu select {
+	background-color: #ffffff;
+	margin-bottom: 3px;
+}
+#pagemenu input {
+	margin-bottom: 3px;
+}
+
+/* ********** GLOBAL STYLES ********** */
+.container-fluid { /* restricts the maximum width of the main page */
+	max-width: 1250px;
+	margin: 0 auto;
+}
+div:focus, footer:focus, header:focus {
+	outline: none; /* turn off outline from tabindex in chrome and safari */
+}
+body {
+	font-size: 0.8125em;
+}
+p {
+	margin-bottom: 15px;
+}
+audio {
+	max-width: 350px;
+	max-height: 40px;
+}
+
+/* ********** IFRAMES ********** */
+.fitvidsignore {
+/* FitVids is a javascipt we use to make videos responsive.
+   While there's no styling attached to this class, it is here so that it shows up in applications like Dreamweaver.
+   The 'fitvidsignore' class, when applied to an iFrame or object tag, tells the FitVids script ignore the video or  */
+}
+.google-maps {
+/* wrap Google Maps in a DIV with this class to make the map responsive */
+	position: relative;
+	padding-bottom: 90%;
+	height: 0;
+	overflow: hidden;
+}
+.google-maps iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* ********** IMAGES ********** */
+/* Bootstrap images have no border by default, so there's no need to specify border:none */
+.image-left, .image-left-noborder {
+	float: left;
+	padding: 0px;
+	margin: 0px 10px 10px 0px;
+}
+.image-right, .image-right-noborder {
+	float: right;
+	padding: 0px;
+	margin: 0px 0px 10px 10px;
+}
+.image-right, .image-left, img.featured, div.featured img, .image-middle {
+	border: 1px solid #ccc ;
+}
+div.featured img {
+	margin-bottom: 5px;
+}
+.image-middle { /* behaves similar to deprecated align=absmiddle */
+	vertical-align: middle;
+	margin: 0 5px .25em 5px;
+}
+.featured, .featured-noborder { /* apply this class to large images, or to a div around a video embed, to keep them from dominating the page */
+	width: 90%;
+	margin: 0 auto 15px;
+    text-align: center;
+	font-style: italic;
+    clear: both;
+}
+.featured .fluid-width-video-wrapper {
+	margin-bottom: 5px;
+}
+img.featured, img.featured-noborder {
+	display: block;
+}
+#content-text img {
+	height: auto;
+}
+/* I stole these from Bootstrap 2.3.2 - if/when we upgrade, we don't need these anymore... */
+.img-circle {
+	-webkit-border-radius: 500px;
+	-moz-border-radius: 500px;
+	border-radius: 500px;
+}
+.img-rounded {
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
+.img-polaroid {	
+	padding: 4px;
+	background-color: #fff;
+}
+.img-circle, .img-rounded, .img-polaroid {
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* ********** LINKS & BUTTONS ********** */
+/* Basic link styles */
+a {
+	color: #006699;
+	text-decoration: none;
+}
+a:hover {
+	color: #0099ff;
+	text-decoration: none;
+}
+/* Content links */
+#content-text a {
+	border-bottom: 1px dotted #006699;
+}
+#content-text a:hover, ul.square a:hover, ul.breadcrumb a:hover {
+	color: #CD2128;
+	border-bottom: 1px solid #CD2128;
+}
+#content-text a[href].btn {
+	padding-top: 4px !important;
+}
+#content-text a.btn {
+	border-bottom: none;
+}
+#content-text a.btn:hover {
+	color: inherit;
+}
+#content-text a.btn-primary:hover, #content-text a.btn-info:hover, #content-text a.btn-success:hover, #content-text a.btn-warning:hover, #content-text a.btn-danger:hover, #content-text a.btn-inverse:hover {
+	color: #fff !important;
+}
+#content-text a[href].btn-super {
+/* extra button size not included in Bootstrap */
+	margin-top: 10px;
+	padding: 15px;
+	padding-top: 15px !important;
+	font-size: 18px;
+}
+span[class^=btn] {
+	padding: 0 2px;
+}
+#content-text .i-am a {
+	border: none;
+}
+/* Google search results */
+.gs-result .gs-title, .gs-result .gs-title * {
+	text-decoration: none !important;
+}
+.gs-result .gs-title:hover, .gs-result .gs-title:hover * {
+	color: #CD2128 !important;
+}
+#content-text a.linkoff {
+	border-bottom: 0;
+}
+
+/* ********** HEADLINES ********** */
+h1 {
+	font-size: 1.85em;
+}
+h2 {
+	font-size: 1.45em;
+}
+h3 {
+	font-size: 1.3em;
+}
+h4, h5, h6 {
+	font-size: 1.1539em;
+}
+h6 { /* overwrites an odd Bootstrap style... */
+	color: #000;
+	text-transform: none;
+}
+small {
+	font-size: .9em;
+	color: #333;
+}
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+	color: #777;
+	line-height: .8;
+}
+#content-container h3 {
+	margin-top: 0; /* counteracts above global style */
+}
+#content-container h2, #content-container h3, #content-container h4, #content-container h5, #content-container h6 {
+	line-height: 1.4em;
+	margin-bottom: 15px;
+	padding-top: 10px;
+}
+/* removes the top padding on headlines when they are the first element the content area */
+#content-text h2:first-child, #content-text h3:first-child, #content-text h4:first-child, #content-text h5:first-child, #content-text h6:first-child, #content-text div h2:first-child, #content-text div h3:first-child, #content-text div h4:first-child, #content-text div h5:first-child, #content-text div h6:first-child, /* or when they are the first element in a container (div, aside, td) inside the content area */
+#content-text aside h2:first-child, #content-text aside h3:first-child, #content-text aside h4:first-child, #content-text aside h5:first-child, #content-text aside h6:first-child, #content-text td h2:first-child, #content-text td h3:first-child, #content-text td h4:first-child, #content-text td h5:first-child, #content-text td h6:first-child, /* or when they are the next element on the page following an aside */
+#content-text aside + h2, #content-text aside + h3, #content-text aside + h4, #content-text aside + h5, #content-text aside + h6, /* or when one headline immediately follows another */
+#content-text h2 + h3, #content-text h2 + h4, #content-text h2 + h5, #content-text h2 + h6, #content-text h3 + h4, #content-text h3 + h5, #content-text h3 + h6, #content-text h4 + h5, #content-text h4 + h6, #content-text h5 + h6 {
+	padding-top: 0;
+}
+/* removes bottom margin when headlines are used in the Spry panels */
+#content-text .CollapsiblePanelTab h1, #content-text .CollapsiblePanelTab h2, #content-text .CollapsiblePanelTab h3, #content-text .CollapsiblePanelTab h4, #content-text .CollapsiblePanelTab h5, #content-text .CollapsiblePanelTab h6 {
+	margin-bottom: 0;
+}
+
+/* ********** HACKS AND PATCHES ********** */
+u { /* this is a hack for old underline tags... */
+	text-decoration: none;
+}
+.alpha { /* removes standard left margin from Bootstrap span class */
+	margin-left: 0 !important;
+}
+/* this is a hack that makes anchor links not get covered up by nav bar */
+#content-container a:target, #content-container h1:target, #content-container h2:target, #content-container h3:target, #content-container h4:target, #content-container h5:target, #content-container h6:target {
+	margin-top: -40px;
+	padding-top: 40px;
+}
+#content-container h1:target {
+	margin-top: -65px;
+	padding-top: 65px;
+}
+#content-container a:target {
+	display: block;
+	border: none;
+}
+/* this is a reverse hack that fixes a problem when an anchor link follows a right-floated box, but it spoils the hack for that anchor, too... */
+#content-text aside + a:target, #content-text aside + h2 > a:target, #content-text aside + h3 > a:target, #content-text aside + h4 > a:target, #content-text aside + h5 > a:target, #content-text aside + h6 > a:target, #content-text aside + h2:target, #content-text aside + h3:target, #content-text aside + h4:target, #content-text aside + h5:target, #content-text aside + h6:target {
+	margin-top: 0;
+	padding-top: 0;
+}
+
+/* ********** LISTS ********** */
+#content-text ol, #content-text ul {
+	margin: 0 0 15px 40px;
+}
+#content-text li > ol, #content-text li > ul, #content-text aside ol, #content-text aside ul {
+	margin-left: 25px;
+}
+#content-text li > ul, #content-text li > ol { /* adjusts nested lists */
+	margin-bottom: 0;
+	margin-top: 5px;
+}
+#content-text li {
+	margin-bottom: 8px;
+}
+#content-text li:last-child {
+	margin-bottom: 0;
+}
+ul ul {
+	list-style: circle;
+}
+ul ul ul {
+	list-style: square;
+}
+ul ul ul ul {
+	list-style: disc;
+}
+ol ol ol {
+	list-style-type: lower-roman;
+}
+dl {
+	margin-top: 0;
+	margin-bottom: 15px;
+}
+dt {
+	margin-bottom: 8px;
+}
+dd {
+	margin-left: 25px;
+	margin-bottom: 15px;
+}
+#content-text .flex-container ol, #content-text .flex-container ul {
+	margin-left: 25px;
+}
+
+/* ********** HEADER ********** */
+header {
+	padding: 10px 0;
+	width: 100%;
+	background-color: #ededed;
+	-webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.35);
+	-moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.35);
+	box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.35);
+	background-image: url(/images/site/dfps_seal.png), url(/images/site/header_bg.png);
+	background-repeat: no-repeat, repeat-x;
+	background-position: right -20px, top;
+}
+#skip_to_content a, #skip_to_content a:hover, #skip_to_content a:visited {
+	position: absolute;
+	left: 0px;
+	top: -500px;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+#skip_to_content a:active, #skip_to_content a:focus {
+	position: static;
+	width: auto;
+	height: auto;
+}
+.language-link a {
+	position: absolute;
+	right: 5px;
+	top: 45px;
+	color: #555555;
+	text-decoration: none;
+	font-size: 0.90em;
+}
+.language-link a:hover {
+	color: #999999;
+}
+.social_btn_bottom {
+	display: none;
+	visibility: hidden;
+}
+.social_btn_top {
+	float: left;
+	margin-left: 2.127659574%;
+	width: 23.404255317%;
+	padding-top: 15px;
+}
+.social_btn_top a:hover, .social_btn_top a:focus {
+	opacity: 0.6;
+	filter: alpha(opacity=60);
+}
+.report_abuse {
+	float: left;
+	margin-left: 2.127659574%;
+	width: 14.89361702%;
+	padding-top: 15px;
+}
+
+/* ********** SEARCH ********** */
+#search {
+	padding: 0 0 10px 0;
+	width: 100%;
+	background-color: #2F6987;
+	-webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.35), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+.form-search label {
+	display: none;
+}
+.well_search {
+	min-height: 14px;
+	padding: 5px;
+	margin: 10px 0 0 0;
+	text-align: center;
+}
+.search-query:focus {
+	border-color: rgba(91, 183, 91, 0.8);
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 4px rgba(91, 183, 91, 1);
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 4px rgba(91, 183, 91, 1);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 4px rgba(91, 183, 91, 1);
+	outline: 0;
+	outline: thin solid #5bb75b \9;/* IE6-9 */
+}
+
+/* ********** FOOTER ********** */
+footer {
+	width: 100%;
+	background-color: #2F6987;
+	padding: 10px 0;
+	margin-top: 20px;
+	clear: both;
+	-webkit-box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.35), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.35), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+	box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.35), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+footer .span3 {
+	margin-left: 2.127659574%;
+	width: 23.404255317%;
+}
+footer .alpha {
+	margin-left: 0;
+}
+footer ul {
+	font-size: 0.900em;
+	margin-bottom: 15px;
+	margin-left: 5px;
+}
+footer li {
+	line-height: 1.25em;
+	margin-bottom: 2px;
+}
+footer h3 {
+	font-size: 1.15em;
+	line-height: 1.25em;
+	margin: 10px 0 5px 0;
+	text-transform: uppercase;
+	text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.7);
+	color: #EAEAEA;
+}
+footer a, footer a:visited {
+	color: #ffffff;
+	text-decoration: none;
+	outline: 0;
+}
+footer a:hover, footer a:focus {
+	color: #e2e2e2;
+}
+
+/* ********** FORMS ********** */
+input[type="submit"] {
+	margin-bottom: 9px;
+}
+.label-transparent {
+	background-color: transparent;
+}
+.label-transparent:hover {
+	background-color: transparent;
+}
+.input-ninety {
+	width: 90%;
+}
+.input-fifty {
+	width: 50%;
+}
+
+/* ********** ALIGN, FLOAT & POSITIONING ********** */
+.align-right {
+	text-align: right;
+}
+.align-left {
+	text-align: left;
+}
+.align-center {
+	text-align: center;
+}
+.float-right {
+	float: right !important;
+}
+.float-left {
+	float: left !important;
+}
+.clear-all {
+	clear: both;
+}
+.offscreen { /* move text offscreen for accessibility */
+	position: absolute;
+	left: -10000px;
+}
+i span { /* move text offscreen for icon descriptions */
+	position: absolute;
+	left: -10000px;
+}
+
+/* ********** DOCUMENT LINKS SPRITE ********** */
+.doclink, .docimg, .pdflink, .pdfimg, .xlslink, .xlsimg, .ppslink, .ppsimg, .externallink, .externalimg, .mdblink, .ziplink, .resizelink {
+	background: url(/images/doclinks/sprite.png) no-repeat;
+	display: inline-block;
+	vertical-align: text-bottom;
+	width: 16px;
+	height: 16px;
+	text-align: left;
+	text-indent: -9999px;
+	margin: 0 1px;
+}
+.doclink, .docimg {
+	background-position: 0 0;
+}
+.pdflink, .pdfimg {
+	background-position: -50px 0;
+}
+.xlslink, .xlsimg {
+	background-position: -100px 0;
+}
+.ppslink, .ppsimg {
+	background-position: -150px 0;
+}
+.externallink, .externalimg {
+	background-position: -250px 0;
+}
+.mdblink {
+	background-position: -200px 0;
+}
+.ziplink {
+	background-position: -300px 0;
+}
+.resizelink {
+	background-position: -350px 0;
+}
+.no_doc_img { /* referenced in javascript */
+}
+
+/* ********** BLOCKQUOTES ********** */
+blockquote {
+	padding: 0 0 0 32px;
+	margin-bottom: 15px;
+}
+blockquote p {
+	margin-bottom: 15px;
+}
+blockquote, blockquote p, blockquote ul {
+	background-image: none;
+	border-right: none;
+	border-left: none;
+	font-style: normal;
+	font-size: 1.00em;
+	line-height: 18px;
+}
+blockquote.quote {
+	background-image: url(/images/site/blockquote.png);
+	background-position: 5px top;
+	background-repeat: no-repeat;
+	padding: 0 0 0 32px;
+	padding-right: 10px;
+	border-right: 5px solid #eeeeee;
+	border-left: none;
+	font-style: italic;
+}
+blockquote.quote-emphasize {
+	padding: 0 0 0 32px;
+	padding-right: 10px;
+	border-right: none;
+	border-left: none;
+	font-style: italic;
+}
+
+/* ********** TABLES ********** */
+.table th, .table-striped th, .table-bordered th, .table-condensed th {
+	background-color: #EBF1F7; /*D2F0EF #BEE9E7; #B1E4E2; */
+	font-weight: bold;
+}
+.table-striped tbody tr:nth-child(2n+1) th {
+	background-color: #EBF1F7; /*D2F0EF #BEE9E7; #B1E4E2; */
+	font-weight: bold;
+}
+.table tbody tr:hover th {
+	background-color: #EBF1F7;
+}
+.table-nohover tbody tr:hover td {
+	background-color: #ffffff;
+}
+.table p:last-child, .table ul:last-child, .table ol:last-child, .table li:last-child {
+	margin-bottom: 0; /* removes padding from last nested element in table cell */
+}
+caption {
+	font-weight: bold;
+	margin: 0 0 15px;
+}
+
+/* ********** HOME PAGE ********** */
+.home-banner { /* aligns a banner image over the task menu */
+	text-align: center;
+	margin-bottom: 20px;
+}
+.home-task {
+	margin-top: 20px;
+}
+.home-task .row div {
+	text-align: center;
+}
+.home-task-title {
+	display: none;
+}
+#home-second-section {
+	padding-bottom: 15px;
+}
+.pa_campaigns {
+	background-color: #90b9d2;
+	margin-bottom: 10px;
+	text-align: center;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+.pa_campaigns a {
+	text-decoration: none;
+	color: #333333;
+}
+.pa_campaigns:hover {
+	text-decoration: none;
+	background-color: #DFDFDF;
+	cursor: pointer;
+}
+.pa_campaigns a:focus div.campaignText {
+	outline: thin dotted #333;
+}
+.pa_campaigns:hover img, .pa_campaigns a:focus img {
+	opacity: 0.6;
+	filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+.pa_campaigns .campaignImg {
+	position: relative;
+}
+.pa_campaigns h3 {
+	line-height: 1em;
+	font-size: 1.22em;
+	margin: 5px 0;
+}
+#main_content .pa_campaigns p {
+	font-size: 0.85em;
+	line-height: 1.20em;
+	margin: 0 3px 5px 3px;
+}
+.pa_campaigns img {
+	-webkit-border-radius: 10px 10px 0 0;
+	-moz-border-radius: 10px 10px 0 0;
+	border-radius: 10px 10px 0 0;
+}
+.featurebanner {
+	margin-top: 15px;
+}
+
+/* ********** I AM PAGE ********** */
+.i-am {
+	display: block;
+	overflow: hidden;
+}
+#content-text .i-am ul {
+	width: 31%;
+	float: left;
+	background-color: transparent; /* Needed when images are turned off */
+	list-style-type: none;
+	display: relative;
+	margin-left: 0;
+	margin-bottom: 0px;
+}
+.i-am li {
+	float: none;
+	clear: both;
+	padding: 0 5px 10px 18px;
+}
+.i-am a {
+	display: block;
+	height: 50px;
+}
+.i-am .nav_p_heading {
+	color: #333333;
+	font-weight: bold;
+	vertical-align: middle;
+}
+.i-am .nav_p_heading:hover, .i-am .nav_p_heading:focus {
+	color: #0099ff;
+	cursor: pointer;
+}
+.i-am img {
+	float: left;
+	margin: 0 10px 10px 0;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.35);
+	-moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.35);
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.35);
+}
+#content-container .well .i-am img:last-child {
+	margin-bottom: 10px;
+}
+
+/* ********** INTERNAL PAGES ********** */
+#side-nav-container:before, #side-nav-container:after, #content-container:before #content-container:after {
+ display: table;
+ content: "";
+}
+#main_content, label {
+	font-size: 1.1539em;
+}
+#main_content p, li, blockquote {
+	line-height: 1.334;
+}
+.page-header {
+	padding-bottom: 5px;
+	margin: 18px 0;
+	border-bottom: 1px solid #eeeeee;
+}
+#mainheading {
+	color: #000000;
+}
+#breadcrumbs {
+	clear: both;
+}
+.breadcrumb {
+	margin: 2px 10px;
+	background: none;
+	font-size: 0.8em;
+	filter: none;
+	border: none;
+	box-shadow: none;
+}
+.breadcrumb li {
+	display: inline-block;
+	text-shadow: none;
+}
+.breadcrumb .divider {
+	padding: 0 5px;
+	color: #999999;
+}
+#add_this {
+	float: right;
+	margin-top: 8px;
+}
+/* these styles are for top section of the template public_section_page.dwt.asp 
+   that template is usually used for the home pages of the major sections of the website */
+.section-header {
+	margin-top: 5px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #eeeeee;
+}
+.section-header div:first-child img {
+	margin: 0 0 15px 0px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	-moz-box-shadow: 0 0 3px 3px #cfcfcf;
+	-webkit-box-shadow: 0 0 3px 3px #cfcfcf;
+	box-shadow: 0 0 3px 3px #cfcfcf;
+}
+.section-header .small-img {
+	display: none;
+}
+.section-header .large-img {
+	display: block;
+}
+
+/* ********** ASIDES, WELL & ALERT CLASSES ********** */
+.well.alert {
+	padding-right: 19px;
+}
+.well-white { /* not a bootstrap style */
+	background-color: #fff;
+	border-color: #ddd;
+}
+aside h2, aside h3, aside h4, aside h5 {
+	font-size: 1.35em;
+}
+#content-text aside :last-child {
+	margin-bottom: 0;
+}
+aside > h2:first-child, aside > h3:first-child, aside > h4:first-child, aside > h5:first-child {
+	margin-top: 0 !important;
+}
+aside.well p, aside.well-white p, aside.well li, aside.well-white li {
+	font-size: 0.9em !important;
+}
+#content-container .well :last-child, #content-container .well-white :last-child {
+	margin-bottom: 0;
+}
+.headerTab { /* adds prominent header above an aside */
+	position: relative;
+	font-size: 14px;
+	line-height: 15px;
+	color: #ffffff !important;
+	margin-bottom: 0px !important;
+	background-color: #666666;
+	padding: 10px !important;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	border-radius: 5px 5px 5px 5px;
+	-webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+	z-index: 10;
+}
+/* these are adjustments to Bootstrap styles */
+.alert {
+	color: #534707;
+	padding: 19px 35px 19px 19px;
+	margin-bottom: 20px;
+}
+.alert-danger, .alert-error {
+	color: #7e1616;
+}
+.alert-info {
+	color: #024a74;
+	background-color: #E1F4FF;
+}
+.alert-success {
+	color: #256426;
+}
+
+/* ********** NAV TABS ********** */
+/*nav tabs is a native Bootstrap class that builds tabs smiliar to Dreamweaver's Spry Tabbed Panels */
+#content-text ul.nav.nav-tabs li {
+	margin-bottom: 0
+}
+#content-text ul.nav.nav-tabs li a[href] {
+	border-bottom: none;
+	margin-bottom: none;
+	padding-top: 8px !important;
+}
+
+/* ********** FLEX BOX ********** */
+#content-text .flex-container {
+	clear: left;
+	padding: 0;
+	margin: 0 0 10px 0;
+	list-style: none;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: stretch;
+}
+#content-text .flex-container div {
+	/* border styles mimic Bootstrap well */
+	border: 1px solid #ddd;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+	/*position: relative;*/
+	text-align: left;
+	padding: 10px;
+	width: 21%; /* four columns - default */
+	margin-right: 1%;
+	margin-top: 10px;
+}
+#content-text .flex-container div img {
+	float: right;
+	margin: 0 0 10px 10px;
+	border: #999 1px solid;
+	max-width: 50%;
+}
+#content-text .flex-container div p:last-child  {
+	margin-bottom: auto;
+}
+@media (max-width: 480px) {
+	#content-text .flex-container {
+		justify-content: center;
+	}
+	#content-text .flex-container div {
+		width: 90%; /* one column */
+		margin-right: 0;
+	}
+}
+@media (min-width: 481px) and (max-width: 575px) {
+	#content-text .flex-container div {
+		width: 42%; /* two columns */
+		margin-right: 2%;
+	}
+}
+@media (min-width: 576px) and (max-width: 1031px) { 
+	#content-text .flex-container div {
+			width: 27%; /*three columns */
+			margin-right: 2%;
+	}
+}
+/* media queries for max-two and -three classes, which force two or three columns, respectively, until you get down to phone size... */
+@media (max-width: 600px) {
+	#content-text .flex-container.max-two, #content-text .flex-container.max-three {
+		justify-content: center;
+	}
+	#content-text .flex-container.max-two div, #content-text .flex-container.max-three div {
+		width: 90%; /* one column */
+		margin-right: 0;
+	}
+}
+@media (min-width: 601px) { 
+	#content-text .flex-container.max-two div, #content-text .flex-container.max-three div {
+		width: 43%;
+		margin-right: 2%;
+}
+/*	#content-text .flex-container.max-three div {
+		width: 27%;
+		margin-right: 2%;
+}*/
+}
+@media (min-width: 900px) { 
+	#content-text .flex-container.max-two div {
+		width: 44%;
+		margin-right: 2%;
+}
+	#content-text .flex-container.max-three div {
+		width: 27%;
+		margin-right: 2%;
+}
+}
+@media (min-width: 1100px) { 
+	#content-text .flex-container.max-two div {
+		width: 45%;
+		margin-right: 2%;
+}
+	#content-text .flex-container.max-three div {
+		width: 28%;
+		margin-right: 2%;
+}
+}
+@media (min-width: 1300px) { 
+	#content-text .flex-container.max-two div {
+		width: 46%;
+		margin-right: 1%;
+}
+	#content-text .flex-container.max-three div {
+		width: 29%;
+		margin-right: 1%;
+}
+}
+
+/******* MEDIA QUERIES *******/
+/* max-width 480px */
+@media (max-width: 480px) {
+.home-banner a { /* aligns a banner image over the task menu */
+	margin-left: 10px;
+}
+/* Global */
+[class*="span"], .row-fluid [class*="span"] {
+ width: 100%;
+}
+ul.square {
+	margin-left: 0;
+}
+table {
+	font-size: 0.800em;
+}
+h1 {
+	font-size: 1.70em;
+}
+h2 {
+	font-size: 1.29em;
+}
+h3 {
+	font-size: 1.1em;
+	margin-top: 1.2em;
+}
+footer {
+	font-size: 1.25em;
+	text-align: center;
+}
+footer .span3 {
+	width: 100%;
+	margin-left: 0;
+}
+.small_screen_hide {
+	display: none;
+}
+/* Home Page */
+.campaign h4 {
+	margin-left: 47px;
+}
+.campaign p {
+	margin-left: 47px;
+}
+.pa_campaigns p {
+	font-size: .9em;
+	line-height: 1em;
+}
+.pa_campaigns h3 {
+	font-size: 1.1em;
+	line-height: .9em;
+}
+.pa_campaigns .campaignImg {
+	width: 40%;
+}
+.pa_campaigns .campaignText {
+	width: 60%;
+}
+.featurebanner {
+	float: none;
+	width: auto;
+}
+
+/* Internal Page */
+.section-header, .section-header > [class*="span"] {
+ float: none;
+ display: block;
+ width: auto;
+ margin-left: 0;
+}
+.section-header .small-img {
+	display: block;
+}
+.section-header .large-img {
+	display: none;
+}
+.input-ninety, .input-fifty {
+	width: 100%;
+}
+#content-text ul.flowbox {
+	margin-left: 0;
+}
+#content-text ul.flowbox li {
+	width: 90%;
+	margin-right: 2%;
+	margin-left: 2%;
+}
+}
+/* max-width 350px */
+@media (max-width: 350px) {
+table {
+	font-size: 0.900em;
+}
+/* Home Page */
+.campaign {
+	height: 35px;
+}
+.campaign h4 {
+	font-size: 1.25em;
+}
+.campaign p {
+	display: none;
+}
+.pa_campaigns p {
+	display: none;
+}
+.pa_campaigns h3 {
+	font-size: 1.0em;
+	margin: 7px 0;
+}
+.featurebanner {
+	float: none !important;
+	width: 100% !important;
+}
+}
+/* min-width 481px, max-width 767px */
+@media (min-width: 481px) and (max-width: 767px) {
+header {
+	background-image: url(/images/site/dfps_seal.png), url(/images/site/header_bg.png);
+	background-repeat: no-repeat, repeat-x;
+	background-position: 600px -40px, top;
+}
+/* Home Page */
+.pa_campaigns p {
+	font-size: 0.9em;
+	line-height: 1em;
+	margin: 5px 0 5px 0;
+}
+.pa_campaigns h3 {
+	font-size: 1.3em;
+	margin-top: 5px;
+}
+/* Internal Page */
+.section-header {
+	width: 100%;
+}
+.section-header > [class*="span"] {
+ float: left;
+ margin-left: 20px;
+ width: 45%;
+}
+.footer-50 {
+	float: left;
+	width: 50%;
+}
+footer .span3 {
+	width: 100%;
+}
+/* Fixes a problem with the FitVids javascript when applied on a page that also contains a floating element.
+   Normally, the span classes switch to width:auto, and this lack of a width declaration, combined with the float,
+   causes the FitVids padding-top calculation to mess up, but only in the 481/767 tablet range... 
+   Even then, it doesn't work perfectly, usually leaving some space above or below the video... (Randy Anthony 6/11/2015) */
+.row-fluid .span12.fitvids {
+	width: 99.999999993%;
+ *width:99.9468085036383%
+}
+.row-fluid .span11.fitvids {
+	width: 91.436464082%;
+ *width:91.38327259263829%
+}
+.row-fluid .span10.fitvids {
+	width: 82.87292817100001%;
+ *width:82.8197366816383%
+}
+.row-fluid .span9.fitvids {
+	width: 74.30939226%;
+ *width:74.25620077063829%
+}
+.row-fluid .span8.fitvids {
+	width: 65.74585634900001%;
+ *width:65.6926648596383%;
+}
+.row-fluid .span7.fitvids {
+	width: 57.182320438000005%;
+ *width:57.129128948638304%
+}
+.row-fluid .span6.fitvids {
+	width: 48.618784527%;
+ *width:48.5655930376383%
+}
+.row-fluid .span5.fitvids {
+	width: 40.055248616%;
+ *width:40.0020571266383%
+}
+.row-fluid .span4.fitvids {
+	width: 31.491712705%;
+ *width:31.4385212156383%
+}
+.row-fluid .span3.fitvids {
+	width: 22.928176794%;
+ *width:22.874985304638297%
+}
+.row-fluid .span2.fitvids {
+	width: 14.364640883%;
+ *width:14.311449393638298%
+}
+.row-fluid .span1.fitvids {
+	width: 5.801104972%;
+ *width:5.747913482638298%
+}
+}
+/* max-width 767px */
+@media (max-width: 767px) {
+/* Global */
+body {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+header {
+	background-image: none, url(/images/site/header_bg.png);
+	background-repeat: no-repeat, repeat-x;
+	background-position: right -20px, top;
+}
+.container, .container-fluid {
+	padding: 0 20px;
+}
+.well_search .search-query {
+	display: inline;
+	width: 75%;
+}
+.language-link a {
+	font-size: 0.9em;
+	top: 55px;
+}
+.report_abuse {
+	text-align: left;
+	padding: 15px 0 5px 0;
+	padding-right: 20px;
+	width: auto;
+	float: none;
+}
+.report_abuse a {
+	width: 100%;
+	font-size: 1.154em;
+}
+.report_abuse i {
+	margin-top: 2px;
+}
+.site_search {
+	position: relative;
+}
+.social_btn_top {
+	display: none;
+	visibility: hidden;
+}
+.social_btn_bottom {
+	display: block;
+	visibility: visible;
+	padding: 10px 0px;
+	text-align: center;
+}
+.mobile-hide {
+	display: none;
+}
+.float-right {
+	float: none !important;
+	width: auto;
+}
+.bottomNav .float-right { 
+	float:right !important;
+}
+
+.float-left {
+	float: none !important;
+	width: auto;
+}
+
+.bottomNav .float-left { 
+	float:left !important;
+}
+
+.row-fluid [class*="float-right"]:first-child {
+	margin-left: 0px;
+}
+/* Home page */
+.home-task div {
+	text-align: left;
+}
+.home-task-title {
+	display: none;
+	text-align: center;
+	white-space: nowrap;
+	font-size: 1.75em;
+	border-bottom: 3px solid #000;
+	margin: 10px 0 20px 0;
+}
+.pa_campaigns {
+	margin-bottom: 15px;
+	width: 100% !important;
+	float: left !important;
+	border-radius: 0px;
+}
+.pa_campaigns .campaignImg {
+	width: 25%;
+}
+.pa_campaigns .campaignText {
+	width: 75%;
+}
+.pa_campaigns div {
+	display: block;
+	float: left;
+}
+.pa_campaigns img {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	box-shadow: 0 0 2px 2px #888888;
+}
+.featurebanner {
+ width:auto !important  max-width:inherit  float:left;
+	width: 45%;
+	margin: 10px 10px;
+}
+/* Internal Page */
+
+.breadcrumb {
+	display: none;
+}
+#add_this {
+	float: none;
+	margin-top: 10px;
+}
+#pagemenu {
+	float: none;
+}
+.i-am ul {
+	width: 100%;
+	float: none;
+}
+.section-home [class^="icon-"] {
+	vertical-align: baseline;
+}
+}
+/* min-width 768px */
+@media (min-width: 768px) {
+.row-fluid aside[class*="span"]:first-child {
+	margin-left: 2.564102564%
+}
+.dl-horizontal dt {
+    width: 25%;
+}
+.dl-horizontal dd {
+    margin-left: 27%;
+	margin-bottom: 10px;
+}
+}
+/* min-width 768px, max-width 1031px */
+@media (min-width: 768px) and (max-width: 1031px) {
+/* originally max-width: 979px */
+/* Global */
+#search .container-fluid {
+	max-width: 640px;
+}
+.language-link a {
+	top: 55px;
+}
+.social_btn_top {
+	float: left;
+	margin-left: 2.127659574%;
+	width: 23.404255317%;
+	padding-top: 25px;
+}
+.report_abuse {
+	float: left;
+	margin-left: 2.127659574%;
+	width: 14.89361702%;
+	padding-top: 25px;
+}
+.report_abuse a {
+	font-size: 0.800em;
+}
+footer {
+	font-size: 0.95em;
+}
+footer li {
+	margin-bottom: 5px;
+}
+/* Home Page */
+.pa_campaigns p {
+	font-size: 0.98em;
+}
+.pa_campaigns h3 {
+	font-size: 1.12em;
+}
+/* Internal Pages */
+.i-am .nav_p_heading {
+	font-size: 0.80em;
+}
+}
+/* max-width 1031px */
+@media (max-width: 1031px) {
+/* originally max-width: 979px */	 
+.language-link a {
+	right: 25px;
+}
+legend {
+	font-size: 1.25em;
+	line-height: 1.35em;
+	padding-bottom: 10px;
+	font-weight: bold;
+}
+}
+/* min-width 1032px */
+@media (min-width: 1032px) {
+/* originally 980 */
+body {
+	padding-top: 40px;
+	position: relative;
+}
+/*#content-text a[name]:after {
+ content: ".";
+ font-size:0px;
+}
+#content-text a:empty[name] {
+ padding-top: 40px;
+}
+#content-text a[name] {
+ padding-top: 40px;
+}*/
+#content-text a[href] {
+	padding-top: 0px !important;
+}
+#search .container-fluid {
+	max-width: 820px;
+}
+.social_btn_top {
+	float: left;
+	margin-left: 2.127659574%;
+	width: 23.404255317%;
+	padding-top: 25px;
+}
+.report_abuse {
+	float: left;
+	margin-left: 2.127659574%;
+	width: 14.89361702%;
+	padding-top: 25px;
+}
+}
+/* min-width 1200px */
+@media (min-width: 1200px) {
+header {
+	background-image: url(/images/site/dfps_seal_big.png), url(/images/site/header_bg.png);
+}
+.report_abuse {
+	width: 40.425531911%;
+	padding-top: 20px;
+}
+.social_btn_top {
+	width: 40.425531911%;
+	padding-top: 5px;
+}
+.report_abuse {
+	margin-bottom: 20px;
+}
+#search .container-fluid {
+	max-width: 1030px;
+}
+footer h2 {
+	font-size: 1.15em;
+}
+footer li {
+	font-size: 1.2em;
+}
+}
